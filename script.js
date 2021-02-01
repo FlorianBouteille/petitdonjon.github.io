@@ -187,6 +187,7 @@ function level_1_rat()
 async function level_1_wait()
 {
     text.innerHTML = "";
+    choices.innerHTML = "";
     await sleep(2000);
     text.innerHTML += "Vous vous décidez à attendre";
     await sleep(4000);
@@ -204,39 +205,46 @@ async function level_1_wait()
     await sleep(4000);
     text.innerHTML += " Miracle, la porte est ouverte ! dépéchez vous de filer";
     await sleep(4000);
-    choices.innerHTML = "<button onclick = 'level_2()'>Prendre la fuite</button>";
+    add_choice('level_2()', "Prendre la fuite");
 
 }
 
 function level_2()
 {
+    choices.innerHTML = "";
     console.log(princesse);
     background.style.backgroundImage = "url('labyrinth.jpg')";
     text.innerHTML = "<p>Vous vous retrouvez dans un immense méandre d'escaliers délabrés, aucune indication ne vous permet de savoir ou aller, deux des escaliers semblent en meilleur état que les autres...</p>";
-    choices.innerHTML = "<button onclick = 'fall()'>Descendre</button><button onclick = 'level_3()'>Monter</button>";
+    add_choice('fall()', "Descendre");
+    add_choice('level_3()', "Monter");
     if (princesse == true)
     {
         text.innerHTML += "<p>La princesse, à peine transformée, vous regarde avec des yeux doux...</p>";
-        choices.innerHTML += "<button onclick = 'alert(\"Mon père le roi disait toujours : dans le doute, mieux vaut prendre de la hauteur\")'>Demander conseil à la princesse</button>";
+        add_choice('alert(\"Mon père le roi disait toujours : dans le doute, mieux vaut prendre de la hauteur\")', "demander conseil à la princesse");
     }
 }
 
 function level_3()
 {
+    choices.innerHTML = "";
     background.style.backgroundImage = "url('laboratory.jpg')";
     text.innerHTML = "<p>Après avoir gravi un nombre interminable de marches, vous vous trouvez dans un vaste pièce qui ressemble à un laboratoire. Des rangées de potions magiques sur les étagères... Peut être que l'une d'entre elle peut vous permettre de vous échapper ? Aurez vous le courage d'en boire une avant de continuer votre chemin ?</p>";
-    choices.innerHTML = "<button onclick = 'death()'>boire la potion rose</button><button onclick =  'yellow_Pot()'>boire la potion jaune</button><button onclick = 'ogre()'>Continuer son chemin</button>";
+    add_choice('death()', "Boire la potion rose");
+    add_choice('Yellow_pot()', "Boire la potion jaune");
+    add_choice('ogre()', "Continuer son chemin");
 }
 
 function level_4()
 {
+    choices.innerHTML = "";
     background.style.backgroundImage = "url('merchant.jpg')";
     text.innerHTML = "<p>Ce donjon est décidément plein de surprises, vous tombez nez à nez avec un vieil homme étrange mais plutôt sympathique ! à sa droite, un grand escalier lumineux. A sa gauche, un tobbogan qui descend vers les ténèbres.</p>";
     text.innerHTML += "</p>\"Bonjour noble héros, on m'appelle le collectionneur. Cela fait des mois que je cherche la pièce qu'il manque à ma collection : la petite cuillère sacrée. Si tu as ça dans ton inventaire, je suis prêt à t'en donner un bon prix... 10 pièces d'or, sonnantes et trébuchantes ! \"</p>";
-    choices.innerHTML = "<button onclick = 'level_5()'>Monter l'escalier</button><button onclick='level_secret()'>prendre le toboggan</button>";
+    add_choice('level_5()', "Monter l'escalier");
+    add_choice('level_secret()', "Prendre le toboggan");
     if (arme == "cuiller")
     {
-        choices.innerHTML = "<button onclick = 'trade()'>accepter le marché du vieil homme.</button>";
+        add_choice('trade()', "Accepter le marché du vieil homme");
         console.log(pieces_or);
     }
 }

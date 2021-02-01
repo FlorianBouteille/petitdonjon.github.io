@@ -20,7 +20,7 @@ input, select{
 #background
 {
     background-color:black;
-    background-image:url("background.jpg");
+    background-image:url("../img/background.jpg");
     background-repeat: no-repeat;
     background-size:contain;
     background-position-x: center;

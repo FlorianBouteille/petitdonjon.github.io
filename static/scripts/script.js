@@ -94,7 +94,7 @@ function victory()
 {
     choices.innerHTML = "";
     pieces_or = pieces_or - 9;
-    background.style.backgroundImage = "url('static/img/static/img/victory.jpg')";
+    background.style.backgroundImage = "url('static/img/victory.jpg')";
     text.innerHTML = "Victoire ! Vous vous envolez vers les cieux, enfin libéré de cet étrange donjon maléfique.";
     add_choice("document.location.reload()", "Recommencer une partie !");
 }

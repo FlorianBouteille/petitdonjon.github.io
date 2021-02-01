@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Shadows+Into+Light&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">
+    <title>Petit donjon</title>
+</head>
+<body>
+    <div id="background">
+        <form name="myForm" action="" onsubmit="startGame()" method="post" id="formulaire">
+            Nom de ton héros: <input type="text" name="name" id ="name">
+            Arme : 
+            <select name="arme" id="arme">
+                <option value="">--Choisis ton arme--</option>
+                <option value="baguette">Baguette magique</option>
+                <option value="epee">Epée</option>
+                <option value="cuiller">Petite cuillère</option>
+            </select>
+            Pouvoir magique :
+            <select name="pouvoir" id="pouvoir">
+                <option value="">--Choisis ton pouvoir--</option>
+                <option value="annimaux">Parler aux annimaux</option>
+                <option value="invisible">Se rendre invisible</option>
+                <option value="chance">Une chance surnaturelle</option>
+            </select>
+            <input type="submit" value="Démarrer l'aventure">
+            </form> 
+            <div id="game">
+                <div id="text"></div>
+                <div id="choices"></div>
+            </div>
+    </div>
+    <script src = "script.js"></script>
+</body>
+</html>

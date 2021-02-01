@@ -1,0 +1,80 @@
+html, body
+{
+    padding:0;
+    margin:0;
+    height:100%;
+    width:100%;
+}
+
+form {
+    display:flex;
+    align-items:center;
+    flex-direction: column;
+}
+
+input, select{
+    margin-bottom: 20px;
+}
+
+#background
+{
+    background-color:black;
+    background-image:url("background.jpg");
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position-x: center;
+    min-height:100%;
+    width:100%;
+    flex-direction:row;
+    justify-content:space-between;
+}
+
+#text
+{
+    font-family: 'Amatic SC', cursive;
+    font-size: 22px;
+    height:100vh;
+    width:20%;
+    padding-left: 2%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-evenly;
+    align-items:center;
+    color: rgb(243, 247, 187);
+}
+
+#choices
+{
+    height:100vh;
+    width:20%;
+    padding-right:2%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    align-items:space-evenly;
+    width:20%;
+    color: rgb(243, 247, 187);
+}
+
+#game
+{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+}
+
+button
+{
+    font-family: 'Shadows Into Light', cursive;
+    height: 15%;
+    font-size : 22px;
+    background-color: rgb(72, 105, 104);
+    color:rgb(198, 245, 90);
+    opacity:40%;
+}
+
+button:hover
+{
+    opacity:100%;
+    border: 1px double rgb(198, 245, 90);
+}

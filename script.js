@@ -18,6 +18,7 @@ formulaire.addEventListener('submit', handleForm);
 function startGame() 
     {
         background.style.backgroundImage = "url('background.jpg')";
+        game.style.display = 'flex';
         if ((nom == "") || (arme == "") || (pouvoir == ""))
         {
         alert("Choisissez un nom, une arme et un pouvoir !");
@@ -35,6 +36,7 @@ function add_choice(chemin, texte)
 
 function playGame()
     {
+        background.style.backgroundImage = "url('background.jpg')";
         if (pv != 11)
         {
             alert("oups, retour à la case départ");

@@ -169,6 +169,7 @@ function level_1_door()
 
 function level_1_rat()
 {
+    choices.innerHTML = "";
     if (pouvoir == 'annimaux')
     {
         text.innerHTML = "<p>Quoi ? Tu comprends ce que je dis ? Incroyable ! Ca fait 15 ans que j'écume ces contrées à la recherche d'aide. Ne te fie pas à mon aspect répugnant, j'ai été transformé en rat par une sorcière maléfique. Je suis en réalité un princesse intergalactique et je peux reprendre ma forme originelle et t'aider à sortir d'ici. Pour rompre le sortilège, il te suffit de m'embrasser !</p>"
@@ -177,7 +178,10 @@ function level_1_rat()
     {
         text.innerHTML = "<p>couic</p>"
     }
-    choices.innerHTML = "<button onclick = 'playGame()'>Caresser le rat</button><button onclick = 'playGame()'>prononcer une formule magique</button><button onclick = 'level_2_princesse()'>Faire un bisou à la créature sale</button><button onclick = 'playGame()'>Tenter de couiner à votre tour</button>"
+    add_choice('playGame()', "Caresser le rat");
+    add_choice('playGame()', "prononcer une formule magique");
+    add_choice('level_2_princesse()', "Faire un bisou à la créature répugnante");
+    add_choice('playGame()', "Couiner à son tour");
 }
 
 async function level_1_wait()

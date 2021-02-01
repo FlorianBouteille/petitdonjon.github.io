@@ -7,6 +7,7 @@ html, body
 }
 
 form {
+    color: rgb(243, 247, 187);
     display:flex;
     align-items:center;
     flex-direction: column;

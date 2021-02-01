@@ -12,14 +12,15 @@ let pieces_or;
 function handleForm(event) 
 {
     event.preventDefault();
+    nom = document.getElementById("name").value;
+    arme = document.getElementById("arme").value;
+    pouvoir = document.getElementById("pouvoir").value;
+    startGame();
 } 
 
 function init()
 {
     formulaire = document.getElementById("formulaire");
-    nom = document.getElementById("name").value;
-    arme = document.getElementById("arme").value;
-    pouvoir = document.getElementById("pouvoir").value;
     choices = document.getElementById("choices");
     text = document.getElementById("text");
     background = document.getElementById("background");
@@ -49,7 +50,7 @@ function startGame()
 
 function add_choice(chemin, texte)
 {
-    choices.innerHTML += "<button onclick = " + chemin + ">" + texte + "</button>";
+    choices.innerHTML += '<button onclick = "' + chemin + '">' + texte + '</button>';
 }
 
 function playGame()
@@ -97,7 +98,7 @@ function victory()
     add_choice("document.location.reload()", "Recommencer une partie !");
 }
 
-function yellow_Pot()
+function yellow_pot()
 {
     alert("Pouf ! Vous vous téléportez dans un nuage de fumée !");
     level_4();
@@ -124,7 +125,7 @@ function ogre()
     }
     if (arme == "epee")
     {
-        add_choice("alert(\"ennemi vaincu !\") level_4()", "se battre !");
+        add_choice("alert('ennemi vaincu !'); level_4()", "se battre !");
     }
 }
 
@@ -238,7 +239,7 @@ function level_2()
     if (princesse == true)
     {
         text.innerHTML += "<p>La princesse, à peine transformée, vous regarde avec des yeux doux...</p>";
-        add_choice('alert(\"Mon père le roi disait toujours : dans le doute, mieux vaut prendre de la hauteur\")', "demander conseil à la princesse");
+        add_choice("alert('Mon père le roi disait toujours : dans le doute, mieux vaut prendre de la hauteur')", "Demander conseil à la princesse");
     }
 }
 
@@ -248,7 +249,7 @@ function level_3()
     background.style.backgroundImage = "url('laboratory.jpg')";
     text.innerHTML = "<p>Après avoir gravi un nombre interminable de marches, vous vous trouvez dans un vaste pièce qui ressemble à un laboratoire. Des rangées de potions magiques sur les étagères... Peut être que l'une d'entre elle peut vous permettre de vous échapper ? Aurez vous le courage d'en boire une avant de continuer votre chemin ?</p>";
     add_choice('death()', "Boire la potion rose");
-    add_choice('Yellow_pot()', "Boire la potion jaune");
+    add_choice('yellow_pot()', "Boire la potion jaune");
     add_choice('ogre()', "Continuer son chemin");
 }
 

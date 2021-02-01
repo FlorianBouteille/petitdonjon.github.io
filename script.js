@@ -1,19 +1,37 @@
-let formulaire = document.getElementById("formulaire");
-let nom = document.getElementById("name").value;
-let arme = document.getElementById("arme").value;
-let pouvoir = document.getElementById("pouvoir").value;
-let choices = document.getElementById("choices");
-let text = document.getElementById("text");
-let background = document.getElementById("background");
-let princesse = false;
-let pv = 11;
-let pieces_or = 0;
+let formulaire;
+let nom;
+let arme;
+let pouvoir;
+let choices;
+let text;
+let background;
+let princesse;
+let pv;
+let pieces_or;
 
 function handleForm(event) 
-    {
-        event.preventDefault();
-    } 
-formulaire.addEventListener('submit', handleForm);
+{
+    event.preventDefault();
+} 
+
+function init()
+{
+    formulaire = document.getElementById("formulaire");
+    nom = document.getElementById("name").value;
+    arme = document.getElementById("arme").value;
+    pouvoir = document.getElementById("pouvoir").value;
+    choices = document.getElementById("choices");
+    text = document.getElementById("text");
+    background = document.getElementById("background");
+    princesse = false;
+    pv = 11;
+    pieces_or = 0;
+    formulaire.addEventListener('submit', handleForm);
+}
+
+window.addEventListener('load', function () {
+    init();
+  })
 
 function startGame() 
     {

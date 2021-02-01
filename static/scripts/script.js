@@ -36,7 +36,7 @@ window.addEventListener('load', function () {
 
 function startGame() 
     {
-        background.style.backgroundImage = "url('background.jpg')";
+        background.style.backgroundImage = "url('static/img/background.jpg')";
         game.style.display = 'flex';
         if ((nom == "") || (arme == "") || (pouvoir == ""))
         {
@@ -55,7 +55,7 @@ function add_choice(chemin, texte)
 
 function playGame()
     {
-        background.style.backgroundImage = "url('background.jpg')";
+        background.style.backgroundImage = "url('static/img/background.jpg')";
         if (pv != 11)
         {
             alert("oups, retour à la case départ");
@@ -79,7 +79,8 @@ function playGame()
         add_choice('level_1_wait()', "Atendre dans le noir");
     }
 
-function sleep(ms) {
+function sleep(ms) 
+{
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
@@ -93,7 +94,7 @@ function victory()
 {
     choices.innerHTML = "";
     pieces_or = pieces_or - 9;
-    background.style.backgroundImage = "url('victory.jpg')";
+    background.style.backgroundImage = "url('static/img/static/img/victory.jpg')";
     text.innerHTML = "Victoire ! Vous vous envolez vers les cieux, enfin libéré de cet étrange donjon maléfique.";
     add_choice("document.location.reload()", "Recommencer une partie !");
 }
@@ -115,7 +116,7 @@ function lancer_sort(proba)
 
 function ogre()
 {
-    background.style.backgroundImage = "url('ogre.jpg')";
+    background.style.backgroundImage = "url('static/img/ogre.jpg')";
     text.innerHTML = "<p>Un gigantesque homme des tunnels vous barre la route ! Il n'est pas armé mais il est massif et ne semble pas vouloir vous laisser passer</p>";
     choices.innerHTML = "";
     add_choice("level_3()", "rebrousser chemin");
@@ -232,7 +233,7 @@ function level_2()
 {
     choices.innerHTML = "";
     console.log(princesse);
-    background.style.backgroundImage = "url('labyrinth.jpg')";
+    background.style.backgroundImage = "url('static/img/labyrinth.jpg')";
     text.innerHTML = "<p>Vous vous retrouvez dans un immense méandre d'escaliers délabrés, aucune indication ne vous permet de savoir ou aller, deux des escaliers semblent en meilleur état que les autres...</p>";
     add_choice('fall()', "Descendre");
     add_choice('level_3()', "Monter");
@@ -246,7 +247,7 @@ function level_2()
 function level_3()
 {
     choices.innerHTML = "";
-    background.style.backgroundImage = "url('laboratory.jpg')";
+    background.style.backgroundImage = "url('static/img/laboratory.jpg')";
     text.innerHTML = "<p>Après avoir gravi un nombre interminable de marches, vous vous trouvez dans un vaste pièce qui ressemble à un laboratoire. Des rangées de potions magiques sur les étagères... Peut être que l'une d'entre elle peut vous permettre de vous échapper ? Aurez vous le courage d'en boire une avant de continuer votre chemin ?</p>";
     add_choice('death()', "Boire la potion rose");
     add_choice('yellow_pot()', "Boire la potion jaune");
@@ -256,7 +257,7 @@ function level_3()
 function level_4()
 {
     choices.innerHTML = "";
-    background.style.backgroundImage = "url('merchant.jpg')";
+    background.style.backgroundImage = "url('static/img/merchant.jpg')";
     text.innerHTML = "<p>Ce donjon est décidément plein de surprises, vous tombez nez à nez avec un vieil homme étrange mais plutôt sympathique ! à sa droite, un grand escalier lumineux. A sa gauche, un tobbogan qui descend vers les ténèbres.</p>";
     text.innerHTML += "</p>\"Bonjour noble héros, on m'appelle le collectionneur. Cela fait des mois que je cherche la pièce qu'il manque à ma collection : la petite cuillère sacrée. Si tu as ça dans ton inventaire, je suis prêt à t'en donner un bon prix... 10 pièces d'or, sonnantes et trébuchantes ! \"</p>";
     add_choice('level_5()', "Monter l'escalier");
@@ -271,7 +272,7 @@ function level_4()
 function level_secret()
 {
     choices.innerHTML = "";
-    background.style.backgroundImage = "url('stone.jpg')";
+    background.style.backgroundImage = "url('static/img/stone.jpg')";
     text.innerHTML = "<p>Une étrange pierre brillante trône au milieu de cette salle sombre, vous déchifrez une inscription à sa base</p>";
     text.innerHTML += "<p>La pierre d'échange donne aux aventuriers ce dont ils ont besoin pour avancer. Ils devront pour celà sacrifier leur arme préférée.</p>";
     add_choice("stone()", "déposer son arme sur la pierre");
@@ -281,7 +282,7 @@ function level_secret()
 function level_5()
 {
     choices.innerHTML = "";
-    background.style.backgroundImage = "url('tower_top.jpg')"
+    background.style.backgroundImage = "url('static/img/tower_top.jpg')"
     text.innerHTML = "<p>Enfin ! Le haut de la tour. Un homme se tient là, à côté d'une créature ailée majestueuse.</p>";
     text.innerHTML += "<p>-Ca vous tente un petit voyage vers la lberté ? Pour seulement 9 pièces d'or, c'est donné ! sensations garanties</p>";
     if (pieces_or >= 9)
